@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>The Mail Alchemist</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Cormorant+Garamond:wght@400;600&family=Cinzel+Decorative&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative&family=Cormorant+Garamond:wght@400;600&family=Libre+Baskerville&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body >
+  <div class="border-decor"></div>
+
+  <nav class="navbar ">
+    <div class="navbar-left">
+      <img src="images/logo.png" alt="The Mail Alchemist Logo" class="logo">
+    </div>
+
+    <ul>
+      <li><a class= "underline-hover dark-underline" href="#">Home</a></li>
+      <li><a class= "underline-hover dark-underline" href="#features">Features</a></li>
+      <li><a class= "underline-hover dark-underline" href="#help">Services</a></li>
+      <li><a class= "underline-hover dark-underline" href="#footer">Contact</a></li>
+    </ul>
+
+    <div class="navbar-right">
+      <div class="menu-icon" onclick="openMenu()">☰</div>
+    </div>
+  </nav>
+
+  <div id="side-panel" class="side-panel">
+    <a href="javascript:void(0)" class="close-btn" onclick="closeMenu()">&times;</a>
+    <a href="#">Home</a>
+    <a href="#features">Features</a>
+    <a href="#help">Services</a>
+    <a href="#footer">Careers</a>
+    <a href="#footer">Contact</a>
+  </div>
+
+  <section class="hero-section">
+    <div>
+    <h1 class="main-heading underline-hover dark-underline">The Mail Alchemist</h1>
+    <h2 class="sub-heading">Craft, Cast, Connect</h2>
+    <p class="byline">Upload your CSV file, curate your message and share!</p>
+    <button  onclick="scrollToForm()">See it in Action</button>
+  </div>
+  </section>
+  
+
+    <!-- Features -->
+    <section id="features" class="features-section">
+      <h2 class="features-heading underline-hover gold-underline">OUR FEATURES</h2>
+      <div class="features-cards">
+        <div class="feature-card">
+          <img src="images/file.png" alt="Upload CSV Icon" class="feature-icon">
+          <h3>Upload CSV</h3> <br>
+          <p>Effortlessly upload your curated list of email addresses with a single click.</p>
+        </div>
+
+        <div class="feature-card">
+          <img src="images/template (1).png" alt="Template Icon" class="feature-icon">
+          <h3>Use Templates</h3> <br>
+          <p>Choose from ready-made magical templates to save time and create impact effortlessly.</p>
+        </div>
+        
+        <div class="feature-card">
+          <img src="images/magic.png" alt="Customize Messages Icon" class="feature-icon">
+          <h3>Customize Messages</h3>
+          <p>Craft personalized messages tailored to each recipient for greater impact.</p>
+        </div>
+        
+        <div class="feature-card">
+          <img src="images/airplane.png" alt="Send With Ease Icon" class="feature-icon">
+          <h3>Send with Ease</h3> <br>
+          <p>Launch your email campaign seamlessly with the magic of one powerful send.</p>
+        </div>
+      </div>
+    </section>
+       
+    <section class="help-section" id="help">
+      <div class="help-container">
+        <div class="help-text">
+          <h2>How We Can Help You</h2>
+          <ul>
+            <li><img src="images/feather-pen (1).png" alt="Invitation" class="list-icon"> Send personalized invitations</li>
+            <li><img src="images/feather-pen (1).png" alt="Event" class="list-icon"> Announce special events</li>
+            <li><img src="images/feather-pen (1).png" alt="Newsletter" class="list-icon"> Distribute newsletters easily</li>
+            <li><img src="images/feather-pen (1).png" alt="Customers" class="list-icon"> Reach small business customers</li>
+            <li><img src="images/feather-pen (1).png" alt="Community" class="list-icon"> Share updates with your community</li>
+          </ul>
+          
+        </div>
+        <div class="help-image">
+          <img src="images/computer (1).png" alt="Helping illustration">
+        </div>
+      </div>
+    </section>
+    
+
+  <section id="form" class="form-section">
+    <h2>Send Your Mail</h2>
+    <form id="emailForm">
+        <div class="form-group">
+          <label for="csvFile">Upload CSV File</label>
+          <div class="custom-file-upload">
+            <input type="file" id="csvFile" accept=".csv" required />
+            <label for="csvFile" class="file-label">Choose File</label>
+            <span id="file-name">No file chosen</span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="templates">Choose a Template:</label>
+          <select id="templates" class="template-dropdown">
+            <option value=""> No Template Chosen </option>
+            <option value="event">Event Invitation</option>
+            <option value="sale">Sale Announcement</option>
+            <option value="newsletter">Newsletter Update</option>
+            <option value="product">Product Launch</option>
+            <option value="reminder">Friendly Reminder</option>
+          </select>
+        </div>
+        
+
+        <div class="form-group">
+          <label for="subject">Subject:</label>
+          <textarea id="subject" placeholder="Enter subject here..." required></textarea>
+        </div>
+      
+        <div class="form-group">
+          <label for="message">Message:</label>
+          <textarea id="message" rows="5" placeholder="Type your message here..." required></textarea>
+        </div>
+      
+        <button  class="send-button" type="submit">Send Emails</button>
+      </form>
+      
+      <div id="output" class="output"></div>
+  </section>
+
+  <footer class="site-footer" id="footer">
+    <div class="footer-container">
+      
+      <div class="footer-about">
+        <h3>The Mail Alchemist</h3>
+        <p>Crafting magical connections through seamless communication. Curate, cast, and connect effortlessly.</p>
+        <br>
+
+        <div class="footer-socials">
+          <div class="social-icons">
+            <a href="#"><img src="icons/github.png" alt="GitHub"></a>
+            <a href="#"><img src="icons/linkedin.png" alt="LinkedIn"></a>
+            <a href="#"><img src="icons/instagram.png" alt="Instagram"></a>
+            <a href="#"><img src="icons/email.png" alt="Email"></a>
+          </div>
+        </div>
+      </div>
+  
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+  
+      <div class="footer-links">
+        <h4>Product</h4>
+        <ul>
+          <li><a href="#">Bulk Email Sender</a></li>
+          <li><a href="#">Email Templates</a></li>
+          <li><a href="#">Upload CSV Feature</a></li>
+          <li><a href="#">Custom Message Creator</a></li>
+        </ul>
+      </div>
+  
+      <div class="footer-links">
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="#">Help Center</a></li>
+          <li><a href="#">API Documentation</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Service</a></li>
+        </ul>
+      </div>
+  
+    </div>
+  
+    <div class="footer-bottom">
+      <p>© 2025 The Mail Alchemist. All rights reserved.</p>
+    </div>
+  </footer>
+  
+  
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+
+
+
+
+
